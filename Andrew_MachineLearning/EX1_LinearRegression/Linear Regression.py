@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 "一元线性回归"
 
-datafile = r'AnacondaProjects\Andrew_MachineLearning\EX1_LinearRegression\ex1data1.txt'
+datafile = r'Andrew_MachineLearning\EX1_LinearRegression\ex1data1.txt'
 cols = np.loadtxt(
     datafile, delimiter=',', usecols=(0, 1),
     unpack=True)  # Read in comma separated data
@@ -150,7 +150,7 @@ plt.show()
 "多元线性规划"
 
 # 数据导入
-datafile = r'AnacondaProjects\Andrew_MachineLearning\EX1_LinearRegression\ex1data2.txt'
+datafile = r'Andrew_MachineLearning\EX1_LinearRegression\ex1data2.txt'
 cols = np.loadtxt(
     datafile, delimiter=',', usecols=(0, 1, 2),
     unpack=True)  

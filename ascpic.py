@@ -4,7 +4,7 @@ show_height = 50
 show_width = 80
 
 ascii_char = list(
-    "$@B%8&WM#*oahkbdpqwmZO)QLCJUYXzcvunxrjft/\|()1{}[]?-_+`<>i!lI;:,\"^`.")
+    r"$@B%8&WM#*oahkbdpqwmZO)QLCJUYXzcvunxrjft/\|()1{}[]?-_+`<>i!lI;:,\"^`.")
 
 char_len = len(ascii_char)
 
@@ -20,15 +20,15 @@ pic_height, pic_width, _ = pic.shape
 gray = 0.2126 * pic[:, :, 0] + 0.7152 * pic[:, :, 1] + 0.0722 * pic[:, :, 2]
 
 # 直接显示灰度图
-plt.imshow(gray, cmap=plt.cm.gray)
+plt.imshow(gray,cmap="gray")
 plt.show()
 
 # 根据灰度值映射到相应的ascii_char
-# for i in range(show_height):
-#     # 根据比例映射到对应的像素
-#     y = int(i * pic_height / show_height)
-#     text = ""
-#     for j in range(show_width):
-#         x = int(j * pic_width / show_width)
-#         text += ascii_char[int(gray[y][x] / 256 * char_len)]
-#     print(text)
+for i in range(show_height):
+    # 根据比例映射到对应的像素
+    y = int(i * pic_height / show_height)
+    text = ""
+    for j in range(show_width):
+        x = int(j * pic_width / show_width)
+        text += ascii_char[int(gray[y][x] / 256 * char_len)]
+    print(text)
