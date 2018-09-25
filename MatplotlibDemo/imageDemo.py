@@ -64,8 +64,19 @@ from PIL import Image
 img = Image.open(r'MatplotlibDemo\stinkbug.png') # 这里跟前面不同了
 img.thumbnail((64, 64), Image.ANTIALIAS) # 先把图片变小 antialias 平滑滤波插值，用于从大图获取小图
 print(img.format, img.size, img.mode)
+# 可以转换成九种不同模式，分别为1，L，P，RGB，RGBA，CMYK，YCbCr，I，F
+# img.convert("1") 二值图像，非黑即白
+# L         8位灰度图
+# P         8位彩色图
+# RGB       24位彩色图像
+# RGBA      32位彩色图像，比RGB多一个alpha通道
+# CMYK      32位彩色图像，印刷四分色模式
+# YCbYCr    24位彩色图像，Y是指亮度分量，Cb指蓝色色度分量，而Cr指红色色度分量。人的肉眼对视频的Y分量更敏感，因此在通过对色度分量进行子采样来减少色度分量后，肉眼将察觉不到的图像质量的变化。
+# I         32位整型灰色图像
+# F         32位浮点灰色图像
+
 img=np.array(img)   # 不转换成numpy数组会出错
-print(img)
+
 # 默认插值，双线性
 plt.title("bilinear")
 imgplot = plt.imshow(img)

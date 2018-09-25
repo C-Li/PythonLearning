@@ -1,1 +1,2 @@
 # PythonLearning
+记录一下自己的Python学习路程，顺便尝试一下用VSCode连接GitHub
