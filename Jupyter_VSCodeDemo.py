@@ -1,5 +1,5 @@
 # 首先在扩展库中搜索安装Python和Jupyter插件
-# 输入#%%插入新的单元格（相当于Jupyter中的In[0]之类的格子）
+# 输入#%%插入新的单元格（相当于Jupyter中的In[0]之类前缀的单元格）
 # 点击#%%上方的Run cell 运行该段代码，右侧会出现一个新窗口显示输出
 
 import matplotlib.pyplot as plt

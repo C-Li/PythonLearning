@@ -7,6 +7,15 @@ datafile = r'Andrew_MachineLearning\EX1_LinearRegression\ex1data1.txt'
 cols = np.loadtxt(
     datafile, delimiter=',', usecols=(0, 1),
     unpack=True)  # Read in comma separated data
+# loadtxt(fname, dtype=<class 'float'>, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)
+# fname 要读取的文件、文件名、或生成器。
+# dtype 数据类型，默认float。
+# comments 注释。
+# delimiter 分隔符，默认是空格。
+# skiprows 跳过前几行读取，默认是0，必须是int整型。
+# usecols 要读取哪些列，0是第一列。例如，usecols = （1,4,5）将提取第2，第5和第6列。默认读取所有列。
+# unpack 如果为True，将分列读取。
+
 # cols=[[x1,x2,x3,...,xm]
 #       [y1,y2,y3,...,ym]]
 # Form the usual "X" matrix and "y" vector
@@ -16,7 +25,7 @@ m = y.size  # number of training examples
 
 # 数据可视化
 plt.figure(figsize=(10, 6))  # 建立一个宽高为10x6英寸的figure窗口实例
-plt.plot(X, y, 'rx', markersize=10) # 'rx'表示用红色的X来画点
+plt.plot(X, y, 'rx', markersize=10)  # 'rx'表示用红色的X来画点
 plt.grid(True)  # 绘制网格
 plt.ylabel('Profit in $10,000s')
 plt.xlabel('Population of City in 10,000s')
@@ -101,12 +110,13 @@ plotConvergence(jvec)
 def myfit(xval):
     return theta[0] + theta[1] * xval
 
+
 print(X)
 plt.figure(figsize=(10, 6))
 plt.plot(X[:, 1], y[:, 0], 'rx', markersize=10, label='Training Data')  # 训练集
 plt.plot(
     X[:, 1],        # x值
-    myfit(X[:, 1]), # 预测的y值
+    myfit(X[:, 1]),  # 预测的y值
     'b-',           # 蓝色实线
     label='Hypothesis: h(x) = %0.2f + %0.2fx' % (theta[0], theta[1]))   # 预测函数图像
 plt.grid(True)
@@ -131,19 +141,19 @@ myxs, myys, myzs = [], [], []
 for david in xvals:
     for kaleko in yvals:
         myxs.append(david)  # x
-        myys.append(kaleko) # y
+        myys.append(kaleko)  # y
         myzs.append(computeCost(np.array([[david], [kaleko]]), X, y))   # 代价
 
 scat = ax.scatter(
     myxs, myys, myzs,   # x,y,z
-    c=np.abs(myzs),     # 颜色 
-    cmap=plt.get_cmap('YlOrRd')) # 'YlOrRd' 黄色到红色的渐变
+    c=np.abs(myzs),     # 颜色
+    cmap=plt.get_cmap('YlOrRd'))  # 'YlOrRd' 黄色到红色的渐变
 
 plt.xlabel(r'$\theta_0$', fontsize=20)  # $包围的是TeX 方程表达式，\theta_0表示带下标的theta
 plt.ylabel(r'$\theta_1$', fontsize=20)
 plt.title('Cost (Minimization Path Shown in Blue)', fontsize=20)
 plt.plot([x[0] for x in thetahistory], [x[1] for x in thetahistory], jvec,
-         'bo-') # 'bo-'蓝色的实心圆并连线
+         'bo-')  # 'bo-'蓝色的实心圆并连线
 plt.show()
 
 
@@ -153,10 +163,10 @@ plt.show()
 datafile = r'Andrew_MachineLearning\EX1_LinearRegression\ex1data2.txt'
 cols = np.loadtxt(
     datafile, delimiter=',', usecols=(0, 1, 2),
-    unpack=True)  
+    unpack=True)
 X = np.transpose(np.array(cols[:-1]))
 y = np.transpose(np.array(cols[-1:]))
-m = y.size  
+m = y.size
 X = np.insert(X, 0, 1, axis=1)
 
 # 数据可视化
@@ -181,9 +191,11 @@ for icol in range(Xnorm.shape[1]):  # Xnorm.shape[1]返回Xnorm的列数，这�
     stored_feature_means.append(np.mean(Xnorm[:, icol]))    # 平均值
     stored_feature_stds.append(np.std(Xnorm[:, icol]))      # 标准差
     # 跳过第一列(全为1)
-    if not icol: continue
+    if not icol:
+        continue
     # 使用保存的平均值和标准差而不是重新计算，这样更快
-    Xnorm[:, icol] = (Xnorm[:, icol] - stored_feature_means[-1]) / stored_feature_stds[-1]
+    Xnorm[:, icol] = (Xnorm[:, icol] - stored_feature_means[-1]
+                      ) / stored_feature_stds[-1]
 
 # 将正规化后的数据可视化
 plt.grid(True)
@@ -197,8 +209,8 @@ plt.ylabel('Counts')
 dummy = plt.legend()
 plt.show()
 
-#运行多元梯度下降，初始theta仍为0
-#(注意! 在正归化之前不可用，可能会溢出)
+# 运行多元梯度下降，初始theta仍为0
+# (注意! 在正归化之前不可用，可能会溢出)
 initial_theta = np.zeros((Xnorm.shape[1], 1))
 theta, thetahistory, jvec = descendGradient(Xnorm, initial_theta)
 
@@ -206,10 +218,10 @@ theta, thetahistory, jvec = descendGradient(Xnorm, initial_theta)
 plotConvergence(jvec)
 
 # 输出theta
-print("theta is :\n",theta)
+print("theta is :\n", theta)
 
 ytest = np.array([1650., 3.])
-#To "undo" feature normalization, we "undo" 1650 and 3, then plug it into our hypothesis
+# To "undo" feature normalization, we "undo" 1650 and 3, then plug it into our hypothesis
 # 为了计算预测值，使用正规化之前的数据[1650,3]代入预测函数
 ytestscaled = [
     (ytest[x] - stored_feature_means[x + 1]) / stored_feature_stds[x + 1]
@@ -227,6 +239,7 @@ from numpy.linalg import inv    # 用于计算逆矩阵
 def normEqtn(X, y):
     #restheta = np.zeros((X.shape[1],1))
     return np.dot(np.dot(inv(np.dot(X.T, X)), X.T), y)
+
 
 # 输出正规方程对于[1650,30]的预测结果
 print("Normal equation prediction for price of house with 1650 square feet and 3 bedrooms")
