@@ -3,9 +3,12 @@
 
 ## 主要目录
 
-* **Andrew_MachineLeaning**   
-吴恩达机器学习课程的作业  
-* **MatplotlibDemo**   
+* **[Andrew_MachineLeaning](https://github.com/C-Li/PythonLearning/tree/master/Andrew_MachineLearning)**   
+吴恩达机器学习课程的作业
+[课程地址](https://study.163.com/course/courseMain.htm?courseId=1004570029)  
+* **[MatplotlibDemo](https://github.com/C-Li/PythonLearning/tree/master/MatplotlibDemo)**   
 学习Matplotlib过程中的笔记  
-* **NumpyDemo**   
-学习Numpy过程中的笔记
+* **[NumpyDemo](https://github.com/C-Li/PythonLearning/tree/master/NumpyDemo)**   
+学习Numpy过程中的笔记   
+* **[Jupyter_VSCodeDemo.py](https://github.com/C-Li/PythonLearning/tree/master/Jupyter_VSCodeDemo.py)**  
+VSCode中Jupyter插件的试用
