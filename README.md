@@ -12,5 +12,5 @@
 学习Numpy过程中的笔记   
 * **[Jupyter_VSCodeDemo.py](https://github.com/C-Li/PythonLearning/tree/master/Jupyter_VSCodeDemo.py)**  
 VSCode中Jupyter插件的试用
-* **[JupyterDemo.ipynb](https://github.com/C-Li/PythonLearning/tree/master/JupyterDemo.ipynb)**
+* **[JupyterDemo.ipynb](https://github.com/C-Li/PythonLearning/tree/master/JupyterDemo.ipynb)**  
 Jupyter Notebook 本体试用
