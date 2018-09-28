@@ -188,7 +188,7 @@ def mapFeature(x1col, x2col):
     特征映射
     方法接收x1和x2两个向量，返回一个m*28矩阵
     """
-    degrees = 6
+    degrees = 6  # 最高项的次数
     out = np.ones((x1col.shape[0], 1))
 
     for i in range(1, degrees+1):

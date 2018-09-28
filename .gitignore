@@ -1,0 +1,2 @@
+# 忽略Jupyter Notebook 的检查点文件夹
+.ipynb_checkpoints
