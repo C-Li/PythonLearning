@@ -6,11 +6,10 @@
 # 单元型magic函数是由两个“%%”做前缀的，它的参数不仅是当前“%%”行后面的内容，也包括了在当前行以下的行。
 
 
-# 1.对数回归
+# 1.逻辑回归
 # %%
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
 from scipy import optimize  # 最优化函数库
 from scipy.special import expit  # 向量化的logistic函数 迷之报错说没有expit,但是可以用,于是加入白名单不再提示
 
@@ -61,7 +60,7 @@ plt.grid(True)
 # %%
 
 
-def h(mytheta, myX):  # 对数假设函数
+def h(mytheta, myX):  # 假设函数
     return expit(np.dot(myX, mytheta))
 
 
@@ -138,7 +137,7 @@ prcnt_correct = float(pos_correct+neg_correct)/tot
 print("正确预测训练样本的比例: %f." % prcnt_correct)
 
 
-# 2.带正则化的对数回归
+# 2.带正则化的逻辑回归
 # %%
 datafile = r'Andrew_MachineLearning\EX2_LogisticRegression\ex2data2.txt'
 # 数据格式：测试1,测试2,是否合格

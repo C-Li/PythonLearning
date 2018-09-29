@@ -1,6 +1,7 @@
 # 目录
 * EX1 Linear Regression 线性回归
-* EX2 Logistic Regression 对数回归
+* EX2 Logistic Regression 对数/逻辑回归
 
-注意：从EX2开始使用VSCode的Jupyter插件
+注意：EX2有使用VSCode的Jupyter插件和Jupyter Notebook的两个版本。
+用Jupyter Notebook写学习笔记真舒服。
 代码参考自 https://github.com/kaleko/CourseraML
